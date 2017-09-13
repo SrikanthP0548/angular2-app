@@ -1,4 +1,47 @@
 <div class="row">
-  <div class="col-sm-12">
-    <img src="" class="img-responsive"/>
+  <div class="col-xs-12">
+    <img [src]="studentData.imagePath" class="img-responsive" />
   </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <h1>{{studentData.name}}</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div 
+    class="btn-group"
+    appDropdown>
+      <button type="button" class="btn btn-primary dropdown-toggle">Mangage Student
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li><a style="cursor:pointer" (click)="passStudentMarks(studentData.marks)">Add Details To Markslist</a></li>
+        <li><a style="cursor:pointer">Edit Student Details</a></li>
+        <li><a style="cursor:pointer">Delete</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <b> Student Id </b> :{{ studentData.sid }} 
+  </div>
+  <div class="col-xs-12">
+    <b> Student Class </b> :{{ studentData.clas }} 
+  </div>
+  <div class="col-xs-12">
+    <b> Student Section </b> :{{ studentData.section }} 
+  </div>
+   <div class="col-xs-12">
+    <b> Date Of Birth </b> :{{ studentData.DOB }}
+  </div>
+</div>
+<div class="row">
+<hr>
+  <ul class="list-group col-sm-offset-1">
+    <li class="list-group-item" *ngFor="let studentMarks of studentData.marks">
+      {{ studentMarks.sname }} - {{ studentMarks.marks}}
+    </li>
+  </ul>
+</div>

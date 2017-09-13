@@ -1,3 +1,9 @@
-<p>
-  student-item works!
-</p>
+ <a style="cursor:pointer" class="list-group-item clearfix" [routerLink]="[index]">
+      <div class="pull-left" routerLinkActiveted="active">
+        <h4 class="list-group-item-heading">{{ studentData.name }}</h4>
+        <p class="list-group-item-text">{{ studentData.clas + studentData.section }}</p>
+      </div>
+      <span class="pull-right">
+        <img [src]="studentData.imagePath" alt="{{studentData.name}}" class="img-responsive" style="max-height:50px;"/>
+      </span>
+ </a>
